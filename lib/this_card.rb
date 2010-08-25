@@ -6,10 +6,13 @@ class ThisCardMacro
   end
 
   def execute
-    attribute_query = @parameters['attribute']
-    attribute       = attribute_query[query_regex, 1]
+    attribute_query = @parameters['attribute'].strip
 
-    find_card_property(attribute)
+    if attribute_query.downcase == "current user"
+      @current_user.username
+    else
+      find_card_property(attribute_query)
+    end
 
   rescue
     "{ There was an error in your attribute param! }"
@@ -32,8 +35,5 @@ class ThisCardMacro
     attribute.downcase.gsub(" ", "_")
   end
 
-  def query_regex
-    /([^.]*)\.?(.*)?/
-  end
 end
 
