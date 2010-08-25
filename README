@@ -1,0 +1,32 @@
+Mingle Macro - This Card
+========================
+
+- Allow details to be extracted from THIS CARD
+- Provides helpers to extract the username or full name from a user string.
+
+Example:
+
+{{
+    this card
+        attribute: Number
+}}
+
+=> "345"
+
+{{
+    this card
+        attribute: Created for.username
+}}
+
+=> "ndbroadbent"
+
+{{
+    this card
+        attribute: Created for.full_name
+}}
+
+=> "Nathan D. Broadbent"
+
+
+* by Nathan B
+

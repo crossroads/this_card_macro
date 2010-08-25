@@ -1,0 +1,19 @@
+--- 
+- position: 3
+  property_definition_id: 1141
+  color: 'b30600'
+  db_identifier: High
+  url_identifier: High
+  display_value: High
+- position: 2
+  property_definition_id: 1141
+  color: 'ff6600'
+  db_identifier: Medium
+  url_identifier: Medium
+  display_value: Medium
+- position: 1
+  property_definition_id: 1141
+  color: 'f1ff26'
+  db_identifier: Low
+  url_identifier: Low
+  display_value: Low
