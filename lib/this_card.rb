@@ -9,7 +9,7 @@ class ThisCardMacro
     attribute_query = @parameters['attribute'].strip
 
     if attribute_query.downcase == "current user"
-      @current_user.keys.join(", ")
+      @current_user
     else
       find_card_property(attribute_query)
     end
