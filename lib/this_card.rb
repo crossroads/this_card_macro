@@ -8,20 +8,8 @@ class ThisCardMacro
   def execute
     attribute_query = @parameters['attribute']
     attribute       = attribute_query[query_regex, 1]
-    method          = attribute_query[query_regex, 2]
 
-    result = find_card_property(attribute)
-
-    case method
-    when "username"
-      result = username(result)
-    when "full_name"
-      result = full_name(result)
-    when "number"
-      result = result[/(\d+)/,1]
-    end
-
-    result
+    find_card_property(attribute)
 
   rescue
     "{ There was an error in your attribute param! }"
@@ -46,15 +34,6 @@ class ThisCardMacro
 
   def query_regex
     /([^.]*)\.?(.*)?/
-  end
-  def user_regex
-    /([^\(]*) \((.*)\)/
-  end
-  def username(user_string)
-    user_string[user_regex, 2]
-  end
-  def full_name(user_string)
-    user_string[user_regex, 1]
   end
 end
 
