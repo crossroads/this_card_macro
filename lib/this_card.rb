@@ -9,7 +9,8 @@ class ThisCardMacro
     attribute_query = @parameters['attribute'].strip
 
     if attribute_query.downcase == "current user"
-      @current_user
+      user = @project.execute_mql("SELECT 'owner' WHERE 'owner' = CURRENT USER").first
+      user['owner']
     else
       find_card_property(attribute_query)
     end
