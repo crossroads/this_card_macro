@@ -11,7 +11,7 @@ class ThisCardMacro
     if attribute_query.downcase == "current user"
       user = @project.execute_mql("SELECT 'owner' WHERE 'owner' = CURRENT USER").first
       user['owner']
-    if attribute_query.downcase == "current date"
+    elsif attribute_query.downcase == "current date"
       return Time.now.strftime("%Y/%m/%d")
     else
       find_card_property(attribute_query)
